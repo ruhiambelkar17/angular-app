@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { CommonModule } from '@angular/common'
 import {MatCardModule} from '@angular/material/card';
 
