@@ -14,24 +14,25 @@ export class DataService {
   }
 
   createPost(postData: {
-   
-    data:{
-      empId:number,
-      empName:
-       string,
-      empEmail:string,}
-      
-    },
-  ): Observable<any> {
+    data: {
+      empId: number;
+      empName: string;
+      empEmail: string;
+    };
+  }): Observable<any> {
     return this.http.post(this.apiUrl, postData);
-    
   }
 
-  updatePost(id: number, postData:  {data:{
-    empId:number,
-    empName:
-     string,
-    empEmail:string}}): Observable<any> {
+  updatePost(
+    id: number,
+    postData: {
+      data: {
+        empId: number;
+        empName: string;
+        empEmail: string;
+      };
+    }
+  ): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, postData);
   }
 

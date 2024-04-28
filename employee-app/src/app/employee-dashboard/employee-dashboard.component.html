@@ -2,68 +2,56 @@
   <button mat-button [matMenuTriggerFor]="menu">
     <h1>Employee Dashboard</h1>
   </button>
-  <mat-menu #menu="matMenu">
-  </mat-menu>
+  <mat-menu #menu="matMenu"> </mat-menu>
 </div>
 
-<div class="container">
-  <!--Form-->
-  <!-- <div class="form-container">
-    <h1>Add Employee Details</h1>
-    <p class="form-input" >
-      <mat-form-field appearance="outline">
-        <mat-label>Employee Name</mat-label>
-        <input matInput  />
-      </mat-form-field>
-    </p>
-
-    <p >
-      <mat-form-field appearance="outline">
-        <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="pat@example.com" required />
-      </mat-form-field>
-    </p>
-
-    <button mat-raised-button color="primary">Add Employee</button>
-  </div> -->
-  <!-- End of Form-->
-  <!--Employee Details-->
-  <!-- <div class="emp-data-container">
-    <h1>Employee Details</h1>
-  </div> -->
-  <!--End of Employee Details-->
-</div>
 <div class="emp-data-container">
   <h1>Employee Dashboard</h1>
-  <div class="container ">
+  <div class="container">
     <div>
-      <button mat-raised-button color="primary" (click)="addPost()" class="add-btn" type="submit">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="addPost()"
+        class="add-btn"
+        type="submit"
+      >
         Add Employee
       </button>
     </div>
     <hr />
-    <mat-card  *ngFor="let post of posts; let i = index" class="emp-card" >
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title><b>Employee ID: </b>{{ post.attributes.empId}}</mat-card-title>
-            <mat-card-subtitle></mat-card-subtitle>
-             </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content>
-            <b>Employee Name:</b> {{ post.attributes.empName }} <br />
-            <b>Employee Email:</b> {{ post.attributes.empEmail }}
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button color="primary"  (click)="updatePost(post.id)" class="edit-btn">
-                Edit
-              </button>
-              <button mat-raised-button color="primary" (click)="deletePost(post.id)" class="delete-btn">
-                Delete 
-              </button>
-        </mat-card-actions>
-      </mat-card>
-    
-    
+    <mat-card *ngFor="let post of posts; let i = index" class="emp-card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title
+            ><b>Employee ID: </b>{{ post.attributes.empId }}</mat-card-title
+          >
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <b>Employee Name:</b> {{ post.attributes.empName }} <br />
+        <b>Employee Email:</b> {{ post.attributes.empEmail }}
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="updatePost(post.id)"
+          class="edit-btn"
+        >
+          Edit
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="deletePost(post.id)"
+          class="delete-btn"
+        >
+          Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>
 
@@ -74,15 +62,6 @@
     padding-top: 20px;
     padding-left: 40px;
   }
-  
-  /* .form-container {
-    margin-top: 50px;
-    margin-left: 50px;
-    width: 500px;
-    border: 1px solid black;
-    padding: 50px;
-    border-radius: 5px;
-  } */
 
   .emp-data-container {
     margin-top: 50px;
@@ -104,7 +83,6 @@
   .edit-btn {
     margin-right: 50px;
     margin-left: 8px;
-    
   }
 
   .delete-btn {
