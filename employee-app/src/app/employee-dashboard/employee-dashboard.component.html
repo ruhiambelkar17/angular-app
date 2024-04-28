@@ -1,5 +1,7 @@
 <div class="navbar">
-  <button mat-button [matMenuTriggerFor]="menu">Employee Dashboard</button>
+  <button mat-button [matMenuTriggerFor]="menu">
+    <h1>Employee Dashboard</h1>
+  </button>
   <mat-menu #menu="matMenu">
   </mat-menu>
 </div>
@@ -68,6 +70,9 @@
 <style>
   .navbar {
     background-color: rgb(245, 242, 242);
+    height: 50px;
+    padding-top: 20px;
+    padding-left: 40px;
   }
   
   /* .form-container {
