@@ -7,8 +7,8 @@
 </div>
 
 <div class="container">
-  <!--Form-->  
-  <div class="form-container">
+  <!--Form-->
+  <!-- <div class="form-container">
     <h1>Add Employee Details</h1>
     <p class="form-input" >
       <mat-form-field appearance="outline">
@@ -25,59 +25,65 @@
     </p>
 
     <button mat-raised-button color="primary">Add Employee</button>
-  </div>
-  <!-- End of Form-->  
+  </div> -->
+  <!-- End of Form-->
   <!--Employee Details-->
-  <div class="emp-data-container">
+  <!-- <div class="emp-data-container">
     <h1>Employee Details</h1>
-  </div>
-   <!--End of Employee Details-->
-   
+  </div> -->
+  <!--End of Employee Details-->
 </div>
-<div>
-    <h1> API example</h1>
-    <div class="container mt-3">
-       <div>
-        <button mat-raised-button color="primary" (click)="addPost()">Primary</button>
+<div class="emp-data-container">
+  <h1>Employee Dashboard</h1>
+  <div class="container mt-3">
+    <div>
+      <button mat-raised-button color="primary" (click)="addPost()">
+        Add Employee
+      </button>
     </div>
-        <div *ngFor="let post of posts; let i = index" class="card mb-3">
-          
-            <div>
-                <h5 >EMP ID: {{ post.
-                    id }}</h5>
-                <p >Emp Name: {{ post.title }}</p>
-                <!-- <button class="btn btn-primary" (click)="updatePost(post)">Update</button>
-                <button class="btn btn-danger" (click)="deletePost(post.id)">Delete</button> -->
-               
-            </div>
-        </div>
+    <hr />
+    <div *ngFor="let post of posts; let i = index" class="card mb-3">
+      <div>
+        <h5><b>Employee ID: </b>{{ post.id }}</h5>
+        <p><b>Employee Name:</b> {{ post.title }}</p>
+        <button mat-raised-button color="primary" (click)="updatePost(post)" class="edit-btn">
+          Edit
+        </button>
+        <button mat-raised-button color="primary" (click)="deletePost(post.id)" class="delete-btn">
+          Delete
+        </button>
       </div>
-   </div>
+    </div>
+  </div>
+</div>
 
 <style>
   .navbar {
     background-color: rgb(245, 242, 242);
   }
-  .container {
-   
-  }
-  .form-container {
-    margin-top: 50px;
-    margin-left: 50px;
-    width: 500px;
-    border: 1px solid black;
-    padding: 50px;
-    border-radius: 5px;
-  }
-
   
-
-  .emp-data-container{
+  /* .form-container {
     margin-top: 50px;
     margin-left: 50px;
     width: 500px;
     border: 1px solid black;
     padding: 50px;
     border-radius: 5px;
+  } */
+
+  .emp-data-container {
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 500px;
+    border: 1px solid black;
+    padding: 50px;
+    border-radius: 5px;
+  }
+  .edit-btn {
+    margin-right: 50px;
+  }
+
+  .delete-btn {
+    margin-right: 50px;
   }
 </style>

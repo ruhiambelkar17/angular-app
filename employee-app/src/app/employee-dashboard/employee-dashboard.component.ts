@@ -39,23 +39,23 @@ export class EmployeeDashboardComponent implements OnInit {
 
   addPost() {
     console.log("add post hitted******")
-    const newPost = { title: 'New Post', body: 'This is a new post.', userId: 1 };
+    const newPost = { title: 'Ruhi A', body: 'ruhi@gmail.com', userId: 101 };
     this.dataService.createPost(newPost).subscribe(() => {
       this.posts.unshift(newPost);  // For demonstration, prepend locally
     });
   }
 
-  // updatePost(post: any) {
-  //   const updatedPost = { ...post, title: 'Updated Title' };
-  //   this.dataService.updatePost(post.id, updatedPost).subscribe(() => {
-  //     const index = this.posts.findIndex((p) => p.id === post.id);
-  //     this.posts[index] = updatedPost;  // For demonstration, update locally
-  //   });
-  // }
+  updatePost(post: any) {
+    const updatedPost = { ...post, title: 'Ruhi Ambelkar' };
+    this.dataService.updatePost(post.id, updatedPost).subscribe(() => {
+      const index = this.posts.findIndex((p) => p.id === post.id);
+      this.posts[index] = updatedPost;  // For demonstration, update locally
+    });
+  }
 
-  // deletePost(id: number) {
-  //   this.dataService.deletePost(id).subscribe(() => {
-  //     this.posts = this.posts.filter((post) => post.id !== id);
-  //   });
-  // }
+  deletePost(id: number) {
+    this.dataService.deletePost(id).subscribe(() => {
+      this.posts = this.posts.filter((post) => post.id !== id);
+    });
+  }
 }
